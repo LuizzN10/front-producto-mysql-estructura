@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de productos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>API REST - Productos</h1>
+        <p>Front-end sencillo para consumir la API de productos.</p>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>Agregar producto</h2>
+            <form id="product-form" autocomplete="off">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Precio</label>
+                    <input type="number" id="price" name="price" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="stock">Stock</label>
+                    <input type="number" id="stock" name="stock" required>
+                </div>
+
+                <button type="submit" class="btn">Guardar producto</button>
+            </form>
+
+            <div id="message" class="message" aria-live="polite"></div>
+        </section>
+
+        <section class="card">
+            <h2>Listado de productos</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="products-body">
+                    <!-- Filas generadas por app.js -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <small>Front de prueba para la API de productos.</small>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
